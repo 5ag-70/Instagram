@@ -316,7 +316,7 @@ class PhotoUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
 			self.redirect('/')
 		
 class ViewProfilePhotoHandler(blobstore_handlers.BlobstoreDownloadHandler):
-    def get(self, username):
+	def get(self, username):
 		user_profile = InstaUser.query(InstaUser.username == username).get()
 		photo_key = user_profile.profile_image
 		self.send_blob(photo_key)
